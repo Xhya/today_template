@@ -1,0 +1,13 @@
+.component-image-input-upload {
+  margin-top: 10px;
+  border: solid 1px grey;
+  width: 300px;
+  height: 300px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/*# sourceMappingURL=imageInputUpload.style.css.map */

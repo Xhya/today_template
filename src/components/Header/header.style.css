@@ -1,0 +1,14 @@
+.component-header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.component-header .left-logo {
+  margin-left: 20px;
+}
+.component-header .button-right-signin {
+  margin-right: 20px;
+}
+
+/*# sourceMappingURL=header.style.css.map */
