@@ -18,8 +18,7 @@ function AuthModal() {
 
   async function onclickSubmitSignIn(event: MouseEvent<HTMLButtonElement>): Promise<void> {
     try {
-      const test = await doSignInWithEmailAndPassword(signInForm.email, signInForm.password);
-      console.log(':: test', test);
+      await doSignInWithEmailAndPassword(signInForm.email, signInForm.password);
     } catch (error: any) {
       setSignInForm(prevState => ({ ...prevState, errorMessage: error.message }));
     }

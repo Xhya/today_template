@@ -17,7 +17,6 @@ class FirebaseStorage extends Firebase {
 
     public initWebsocket = (callback: any) => {
         this.collectionsRef.onSnapshot((collection: any) => {
-            console.log('\x1b[5m%s\x1b[0m', 'Passe par la');
             callback(collection);
         });
 
@@ -106,9 +105,9 @@ class FirebaseStorage extends Firebase {
 
         if (collectionRef === null) {
             const collectionRef = await this.createNewCollectionDocument(collectionName);
-            await this.createNewImageDocument({ collectionRef, data, name, description, price, url })
+            return await this.createNewImageDocument({ collectionRef, data, name, description, price, url })
         } else {
-            await this.createNewImageDocument({ collectionRef, data, name, description, price, url })
+            return await this.createNewImageDocument({ collectionRef, data, name, description, price, url })
         }
     }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import ImageInputUpload from '../ImageInputUpload/imageInputUpload.component';
 import './collectionBlock.style.css';
 
-function CollectionBlock({ imageData }: { imageData: any }) {
+function CollectionBlock({ imageData, index }: { imageData: any, index: number }) {
 
     const images = imageData[1].map((i: any) => (
         <div key={i.url} className='item-container'>
@@ -18,7 +18,7 @@ function CollectionBlock({ imageData }: { imageData: any }) {
 
             <div className="items-container">
                 {images}
-                <ImageInputUpload collectionName={imageData[0]}></ImageInputUpload>
+                <ImageInputUpload index={index} collectionName={imageData[0]}></ImageInputUpload>
             </div>
 
 

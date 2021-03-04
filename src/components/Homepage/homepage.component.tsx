@@ -11,23 +11,22 @@ function Homepage() {
     const [currentCollectionName, setCurrentCollectionName] = useState('');
 
     useEffect(() => {
-        initWebsocket((test: any) => {
+        initWebsocket(() => {
             updateCollections();
         })
         updateCollections();
     }, []);
 
     // let listImages = imageUrls.map((url) => <img src={url} />);
-    const collectionBlocks = Object.entries(collections).map((imageData) => {
+    const collectionBlocks = Object.entries(collections).map((imageData, i) => {
         if (imageData) {
-            return <CollectionBlock key={imageData[0]} imageData={imageData}></CollectionBlock>;
+            return <CollectionBlock key={imageData[0]} index={i} imageData={imageData}></CollectionBlock>;
         }
     });
 
 
     const updateCollections = async () => {
         const collections = await getCollections();
-        console.log(':: collections', collections);
         // @ts-ignore
         setCollections(collections);
     };
@@ -51,7 +50,7 @@ function Homepage() {
                     />
                 </div>
 
-                {currentCollectionName && <ImageInputUpload collectionName={currentCollectionName}></ImageInputUpload>}
+                {currentCollectionName && <ImageInputUpload index={-1} collectionName={currentCollectionName}></ImageInputUpload>}
                 
             </div>
         </div>
